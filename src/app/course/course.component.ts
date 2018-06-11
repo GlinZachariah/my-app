@@ -1,5 +1,5 @@
 import { GetCourseService } from './../get-course.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Services } from '@angular/core/src/view';
 
 @Component({
@@ -8,14 +8,15 @@ import { Services } from '@angular/core/src/view';
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent  {
-   mytitle= 'Hello Glin';
-   isActive=true;
-   url='http://pngimg.com/uploads/lion/lion_PNG23268.png';
+  @Input() isFavourite:boolean;
+   mytitle = 'Hello Glin';
+   isActive = true;
+   url = 'http://pngimg.com/uploads/lion/lion_PNG23268.png';
    courses;
-   newText='Success';
-   value="";
+   newText = 'Success';
+   value = " ";
    changeText(){
-     console.log("Key Binded value: "+this.value);
+     console.log( "Key Binded value: " +this.value);
    }
 
    onClick($event){
