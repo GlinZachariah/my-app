@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { GetCourseService } from './get-course.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -11,7 +12,8 @@ import { CourseComponent } from './course/course.component';
     CourseComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     GetCourseService
