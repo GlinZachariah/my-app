@@ -9,6 +9,7 @@ import { Services } from '@angular/core/src/view';
 })
 export class CourseComponent  {
    mytitle= 'Hello Glin';
+   url='http://pngimg.com/uploads/lion/lion_PNG23268.png';
    courses;
   constructor(service: GetCourseService) {
     this.courses = service.getCourse();
