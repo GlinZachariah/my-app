@@ -9,8 +9,8 @@
     {{course}}
   </li>
 </ul>
-<input type="text" #variable (keyup.enter)="changeText(variable.value)">
-<p>Keybinded value: {{newtext}}</p>
+<input type="text" #variable (keyup.enter)="value=$event.target.value; changeText() ">
+<p>Keybinded value: {{value}}</p>
 this is image of lion
 <button class="btn btn-primary" (click)="onClick($event)">Click me</button>
 <img  src="{{url}}" alt="lion">
