@@ -13,8 +13,8 @@ export class CourseComponent  {
    url='http://pngimg.com/uploads/lion/lion_PNG23268.png';
    courses;
    newText='Success';
-   changeText(){
-     console.log("Key Binded success");
+   changeText(value){
+     console.log("Key Binded value: "+value);
    }
 
    onClick($event){

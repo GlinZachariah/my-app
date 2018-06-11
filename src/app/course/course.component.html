@@ -9,7 +9,7 @@
     {{course}}
   </li>
 </ul>
-<input type="text" (keyup.enter)="changeText()">
+<input type="text" #variable (keyup.enter)="changeText(variable.value)">
 <p>Keybinded value: {{newtext}}</p>
 this is image of lion
 <button class="btn btn-primary" (click)="onClick($event)">Click me</button>
