@@ -9,8 +9,18 @@ import { Services } from '@angular/core/src/view';
 })
 export class CourseComponent  {
    mytitle= 'Hello Glin';
+   isActive=true;
    url='http://pngimg.com/uploads/lion/lion_PNG23268.png';
    courses;
+   newText='Success';
+   changeText(){
+     console.log("Key Binded success");
+   }
+
+   onClick($event){
+     $event.stopPropogation;
+     console.log("Button clicked");
+   }
   constructor(service: GetCourseService) {
     this.courses = service.getCourse();
   }
