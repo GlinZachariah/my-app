@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IfFav } from './course/course.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ export class AppComponent {
   title = 'app';
   isActive = false;
 
-  valueChanged(){
-    console.log("Output property success");
+  valueChanged(eventArgs: IfFav) {
+    console.log('Output property success: ' + eventArgs);
   }
 }

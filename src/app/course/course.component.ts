@@ -2,33 +2,35 @@ import { GetCourseService } from './../get-course.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Services } from '@angular/core/src/view';
 
+export interface IfFav {
+  isFavourite: boolean;
+}
+
 @Component({
   selector: 'app-course',
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent  {
-  @Input() isFavourite:boolean;
+  @Input() isFavourite: boolean;
   @Output() change = new EventEmitter();
-   mytitle = 'Hello Glin';
    isActive = true;
+   mytitle = 'Hello Glin';
+
    url = 'http://pngimg.com/uploads/lion/lion_PNG23268.png';
    courses;
    newText = 'Success';
-   value = " ";
-   changeText(){
-     this.change.emit();
-     console.log( "Key Binded value: " +this.value);
+   value = ' ';
+   changeText() {
+    console.log( 'Key Binded value: ' + this.value);
    }
 
-   onClick($event){
-     $event.stopPropogation;
-     console.log("Button clicked");
+   onClick() {
+     this.isFavourite = !(this.isFavourite);
+     this.change.emit({newVal : this.isFavourite});
+     console.log(' Button clicked');
    }
   constructor(service: GetCourseService) {
     this.courses = service.getCourse();
   }
-
-
-
 }
