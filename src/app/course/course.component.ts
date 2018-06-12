@@ -1,5 +1,5 @@
 import { GetCourseService } from './../get-course.service';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { Services } from '@angular/core/src/view';
 
 export interface IfFav {
@@ -9,14 +9,14 @@ export interface IfFav {
 @Component({
   selector: 'app-course',
   templateUrl: './course.component.html',
-  styleUrls: ['./course.component.css']
+  styleUrls: ['./course.component.css'],
 })
 export class CourseComponent  {
   @Input() isFavourite: boolean;
   @Output() change = new EventEmitter();
    isActive = true;
    mytitle = 'Hello Glin';
-
+   width = 50;
    url = 'http://pngimg.com/uploads/lion/lion_PNG23268.png';
    courses;
    newText = 'Success';
