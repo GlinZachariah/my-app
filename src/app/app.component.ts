@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   isActive = false;
+
+  valueChanged(){
+    console.log("Output property success");
+  }
 }

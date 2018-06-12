@@ -1,5 +1,5 @@
 import { GetCourseService } from './../get-course.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Services } from '@angular/core/src/view';
 
 @Component({
@@ -9,6 +9,7 @@ import { Services } from '@angular/core/src/view';
 })
 export class CourseComponent  {
   @Input() isFavourite:boolean;
+  @Output() change = new EventEmitter();
    mytitle = 'Hello Glin';
    isActive = true;
    url = 'http://pngimg.com/uploads/lion/lion_PNG23268.png';
@@ -16,6 +17,7 @@ export class CourseComponent  {
    newText = 'Success';
    value = " ";
    changeText(){
+     this.change.emit();
      console.log( "Key Binded value: " +this.value);
    }
 
